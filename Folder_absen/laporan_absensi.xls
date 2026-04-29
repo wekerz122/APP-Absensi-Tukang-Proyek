@@ -1,0 +1,21 @@
+
+<table border='1'>
+<tr>
+    <th>Tanggal</th>
+    <th>Nama Tukang</th>
+    <th>Proyek</th>
+    <th>Jam Masuk</th>
+    <th>Jam Pulang</th>
+    <th>Upah Harian</th>
+    <th>Total Gaji</th>
+    <th>Foto</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th>SPV</th>
+</tr>
+<br />
+<b>Fatal error</b>:  Uncaught mysqli_sql_exception: Unknown column 'users.nama' in 'field list' in C:\laragon\www\Absensi-tukang\admin\export_excel.php:24
+Stack trace:
+#0 C:\laragon\www\Absensi-tukang\admin\export_excel.php(24): mysqli_query(Object(mysqli), '\r\nSELECT \r\n    ...')
+#1 {main}
+  thrown in <b>C:\laragon\www\Absensi-tukang\admin\export_excel.php</b> on line <b>24</b><br />

@@ -1,0 +1,470 @@
+:root{
+  --bg: #0b1220;
+  --card: rgba(255,255,255,.08);
+  --border: rgba(255,255,255,.12);
+  --text: #e8eefc;
+  --muted: rgba(232,238,252,.72);
+  --primary: #5b8cff;
+  --primary2:#34d399;
+  --shadow: 0 18px 50px rgba(0,0,0,.40);
+  --radius: 18px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  color:var(--text);
+  background:
+    radial-gradient(900px 500px at 12% 0%, rgba(91,140,255,.25), transparent 60%),
+    radial-gradient(900px 500px at 88% 20%, rgba(52,211,153,.18), transparent 60%),
+    radial-gradient(700px 500px at 50% 100%, rgba(255,255,255,.08), transparent 60%),
+    var(--bg);
+}
+
+/* ===== Auth Layout ===== */
+.auth-body{
+  display:grid;
+  place-items:center;
+  padding: 24px 16px;
+}
+
+.auth-wrap{
+  width: min(420px, 100%);
+}
+
+.auth-card{
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06));
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+
+.auth-head{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+  padding: 8px 6px 14px;
+}
+
+.auth-logo{
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--primary), var(--primary2));
+  box-shadow: 0 14px 30px rgba(91,140,255,.22);
+}
+
+.auth-title{
+  margin:0;
+  font-size: 18px;
+  letter-spacing: .2px;
+}
+.auth-subtitle{
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.auth-form{ margin-top: 8px; }
+
+.field{ margin-bottom: 12px; }
+label{
+  display:block;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+input{
+  width:100%;
+  padding: 12px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(7, 11, 20, .55);
+  color: var(--text);
+  outline:none;
+}
+
+input::placeholder{ color: rgba(232,238,252,.45); }
+
+input:focus{
+  border-color: rgba(91,140,255,.55);
+  box-shadow: 0 0 0 4px rgba(91,140,255,.18);
+}
+
+.btn{
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  padding: 12px 12px;
+  border-radius: 14px;
+  cursor:pointer;
+  font-weight: 700;
+  transition: .15s ease;
+}
+.btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.10); }
+
+.btn-primary{
+  border-color: rgba(91,140,255,.35);
+  background: linear-gradient(135deg, rgba(91,140,255,.95), rgba(52,211,153,.75));
+  box-shadow: 0 14px 30px rgba(91,140,255,.16);
+}
+
+.btn-block{ width:100%; }
+
+.auth-help{
+  margin-top: 12px;
+  text-align:center;
+}
+
+.auth-footer{
+  margin-top: 14px;
+  text-align:center;
+}
+
+.muted{ color: var(--muted); font-size: 12px; }
+
+/* ===== Dashboard Tukang ===== */
+.row{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+.btn-danger{
+  border-color: rgba(255,91,110,.35);
+  background: linear-gradient(135deg, rgba(255,91,110,.95), rgba(255,204,102,.55));
+}
+
+.link{
+  color: rgba(232,238,252,.9);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(232,238,252,.35);
+}
+.link:hover{ border-bottom-style: solid; }
+
+.sep{ color: rgba(232,238,252,.35); }
+
+.kpi{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+@media (max-width: 700px){
+  .kpi{ grid-template-columns: 1fr; }
+}
+
+.kpi-item{
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.05);
+  border-radius: 16px;
+  padding: 12px;
+}
+.kpi-label{
+  font-size: 12px;
+  color: rgba(232,238,252,.65);
+}
+.kpi-value{
+  margin-top: 6px;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+.note-box{
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.05);
+  border-radius: 16px;
+  padding: 12px;
+}
+.note-title{
+  font-size: 12px;
+  color: rgba(232,238,252,.65);
+  margin-bottom: 6px;
+}
+.note-body{
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* status warn */
+.status.warn .dot{ background: #ffcc66; }
+
+/* Biar container tidak terlalu mepet */
+.container{
+  width: min(1100px, 92vw);
+  margin: 16px auto;
+}
+
+/* Topbar rapihin */
+.topbar{
+  padding: 12px 12px;
+  gap: 10px;
+}
+
+.brand{
+  min-width: 0;              /* penting supaya text bisa wrap */
+}
+
+.brand .title{
+  min-width: 0;
+}
+
+.brand .title b{
+  font-size: 14px;
+}
+
+.brand .title small{
+  display: block;
+  font-size: 12px;
+  white-space: normal;       /* biar bisa turun baris */
+  overflow-wrap: anywhere;   /* biar ga kepanjangan */
+}
+
+/* Tombol: hilangkan underline link */
+.btn{
+  text-decoration: none !important;
+}
+
+/* Aksi kanan (Logout) biar ga ganggu */
+.actions{
+  margin-left: auto;
+}
+
+/* Card padding lebih rapat */
+.card-header{ padding: 14px 14px 10px 14px; }
+.card-body{ padding: 14px; }
+
+/* Judul card jangan kegedean */
+.card-header h2{
+  font-size: 15px;
+}
+.card-header p{
+  font-size: 12px;
+}
+
+/* KPI di HP */
+@media (max-width: 700px){
+  .grid{
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .kpi{
+    grid-template-columns: 1fr 1fr; /* 2 kolom biar ringkas */
+    gap: 10px;
+  }
+
+  .kpi-item{
+    padding: 10px;
+    border-radius: 14px;
+  }
+
+  .kpi-value{
+    font-size: 16px;
+  }
+
+  /* Tombol lebih nyaman di HP */
+  .row .btn{
+    width: 100%;
+    justify-content: center;
+    padding: 12px 12px;
+  }
+
+  /* Status badge jangan makan tempat */
+  .status{
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+}
+
+/* Kalau layar super kecil, KPI jadi 1 kolom */
+@media (max-width: 380px){
+  .kpi{ grid-template-columns: 1fr; }
+}
+
+/* Link foto rapihin */
+.link{
+  display: inline-block;
+  margin-top: 6px;
+}
+/* TOPBAR FIX */
+
+.topbar{
+    display:flex;
+    align-items:center;
+}
+
+.actions{
+    margin-left:auto;
+}
+/* ===== Absen page extras ===== */
+
+select, textarea{
+  width:100%;
+}
+
+.btn-block{
+  width:100%;
+  justify-content:center;
+}
+
+.upload{
+  border: 1px dashed rgba(255,255,255,.20);
+  background: rgba(255,255,255,.04);
+  padding: 12px;
+  border-radius: 16px;
+}
+
+.preview{
+  margin-top: 10px;
+  border-radius: 16px;
+  overflow:hidden;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+}
+.preview img{
+  width:100%;
+  height: 220px;
+  object-fit: cover;
+  display:block;
+}
+@media (max-width: 700px){
+  .preview img{ height: 200px; }
+}
+
+.checklist{
+  margin:0;
+  padding-left: 18px;
+  color: rgba(232,238,252,.85);
+}
+.checklist li{
+  margin: 8px 0;
+  line-height: 1.45;
+}
+
+/* status bad */
+.status.bad .dot{ background: #ff5b6e; }
+.alert.danger{
+border-color: rgba(255,91,110,.35);
+}
+/* =========================
+   SPV (beda dari tukang)
+   ========================= */
+
+.spv-theme{
+  background:
+    radial-gradient(1000px 500px at 10% 0%, rgba(124,58,237,.28), transparent 60%),
+    radial-gradient(900px 500px at 90% 20%, rgba(245,158,11,.18), transparent 55%),
+    radial-gradient(700px 500px at 60% 100%, rgba(255,255,255,.06), transparent 60%),
+    #0b1220;
+}
+
+.spv-logo{
+  background: linear-gradient(135deg, #7c3aed, #f59e0b) !important;
+  box-shadow: 0 14px 30px rgba(124,58,237,.22);
+}
+
+/* tombol utama SPV */
+.spv-theme .btn-primary{
+  border-color: rgba(124,58,237,.35);
+  background: linear-gradient(135deg, rgba(124,58,237,.95), rgba(245,158,11,.70));
+  box-shadow: 0 14px 30px rgba(124,58,237,.18);
+}
+
+/* aksen kartu SPV */
+.spv-theme .card{
+  border: 1px solid rgba(124,58,237,.18);
+}
+
+/* alert khusus SPV */
+.spv-alert{
+  border-color: rgba(245,158,11,.35);
+}
+
+/* Layout SPV: bukan grid tukang */
+.spv-layout{
+  display:grid;
+  grid-template-columns: 1.25fr .75fr;
+  gap:16px;
+}
+
+@media (max-width: 900px){
+  .spv-layout{ grid-template-columns: 1fr; }
+}
+
+/* KPI SPV lebih padat */
+.spv-kpi{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+@media (max-width: 700px){
+  .spv-kpi{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 380px){
+  .spv-kpi{ grid-template-columns: 1fr; }
+}
+.spv-kpi-text{
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+/* Tabel SPV agar tidak berantakan di HP */
+.spv-table table{
+  min-width: 980px; /* penting: biar tidak numpuk */
+}
+.spv-table td, .spv-table th{
+  vertical-align: top;
+}
+
+/* Topbar mobile rapih */
+.spv-topbar .title small{
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+/* Tombol di HP jadi full width */
+@media (max-width: 700px){
+  .row .btn{
+    width:100%;
+    justify-content:center;
+  }
+}
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table-wrap table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+}
+
+.table-wrap th,
+.table-wrap td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    white-space: nowrap;
+}
+
+.table-wrap th {
+    font-weight: 700;
+}
+
+.table-wrap tbody tr:hover {
+    background: rgba(255,255,255,0.04);
+}
+
+.muted {
+    color: rgba(255,255,255,0.7);
+}
